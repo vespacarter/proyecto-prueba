@@ -2,25 +2,20 @@ package colecciones;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
 
 public class Ordenador implements Serializable {
     private String marca;
     private String modelo;
 
-    private Pieza pieza;
-    private List <Pieza> pieza;
+    // private Pieza pieza;
+    private Set<Pieza> piezas;
 
-    public Ordenador(Pieza pieza) {
-        this.pieza = pieza;
+    public Ordenador(Set<Pieza> piezas) {
+        this.piezas = piezas;
     }
 
-    public Pieza getPieza() {
-        return pieza;
-    }
 
-    public void setPieza(Pieza pieza) {
-        this.pieza = pieza;
-    }
 
     public Ordenador() {
     }
@@ -45,12 +40,11 @@ public class Ordenador implements Serializable {
         this.modelo = modelo;
     }
 
-    @Override
-    public String toString() {
-        return "Ordenador{" +
-                "marca='" + marca + '\'' +
-                ", modelo='" + modelo + '\'' +
-                ", pieza='" + pieza + '\'' +
-                '}';
+    public Set<Pieza> getPiezas() {
+        return piezas;
+    }
+
+    public void setPiezas(Set<Pieza> piezas) {
+        this.piezas = piezas;
     }
 }
